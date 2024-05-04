@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="container">
+<!-- stock_form.html -->
+<h1>Stock data project for AWD </h1>
+<br>
+<form method="POST">
+  {% csrf_token %}
+<div class="form-group">
+  <label for="ticker-symbol">Ticker Symbol:</label>
+  <input type="text" id="ticker-symbol" name="ticker_symbol" required><br><br>
+</div>
+
+<div class="form-group">
+  <label for="start-date">Start Date:</label>
+  <input type="date" id="start-date" name="start_date" required><br><br>
+</div>
+<div class="form-group">
+  <label for="end-date">End Date:</label>
+  <input type="date" id="end-date" name="end_date" required><br><br>
+</div>
+  <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+</body>
+</html>

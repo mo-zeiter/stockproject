@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data</title>
+     {% load bootstrap5 %}
+     {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Stock Data</h2>
+        
+        <canvas id="stockChart"></canvas>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Open Price</th>
+                    <th>Close Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in stock_data %}
+                <tr>
+                    <td>{{ data.date }}</td>
+                    <td>{{ data.open_price }}</td>
+                    <td>{{ data.close_price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
