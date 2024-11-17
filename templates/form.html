@@ -7,26 +7,47 @@
   {% bootstrap_javascript %}
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body class="container">
 <!-- stock_form.html -->
-<h1>Stock data project for AWD </h1>
-<br>
-<form method="POST">
-  {% csrf_token %}
-<div class="form-group">
-  <label for="ticker-symbol">Ticker Symbol:</label>
-  <input type="text" id="ticker-symbol" name="ticker_symbol" required><br><br>
+ <br>
+ <br>
+<div class="d-flex justify-content-center">
+  <h2>Stock data project for AWD </h2>
+  
+
+</div>
+<div class="d-flex justify-content-center">
+  <p>Created By <b> Eng. Mohammad AL-Zeiter </b> </p>
+  
+
 </div>
 
-<div class="form-group">
-  <label for="start-date">Start Date:</label>
-  <input type="date" id="start-date" name="start_date" required><br><br>
-</div>
-<div class="form-group">
-  <label for="end-date">End Date:</label>
-  <input type="date" id="end-date" name="end_date" required><br><br>
-</div>
-  <input type="submit" value="Submit" class="btn btn-primary">
-</form>
+<br>
+<br>
+<br>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <form method="POST">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="ticker-symbol">Ticker Symbol:</label>
+        <input class="form-control" type="text" id="ticker-symbol" name="ticker_symbol" required> <br>
+      </div>
+      <div class="form-group">
+        <label for="start-date">Start Date:</label>
+        <input class="form-control" type="date" id="start-date" name="start_date" required> <br>
+      </div>
+      <div class="form-group">
+        <label for="end-date">End Date:</label>
+        <input class="form-control" type="date" id="end-date" name="end_date" required> <br>
+      </div>
+      <input class="form-control bg-primary text-white"  type="submit" value="Submit" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>
